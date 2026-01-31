@@ -38,6 +38,7 @@
 			"dist/nodes/DocRouterLLM/DocRouterLLM.node.js",
 			"dist/nodes/DocRouterPrompt/DocRouterPrompt.node.js",
 			"dist/nodes/DocRouterSchema/DocRouterSchema.node.js",
+			"dist/nodes/DocRouterKnowledgeBase/DocRouterKnowledgeBase.node.js",
 			"dist/nodes/DocRouterWebhook/DocRouterWebhook.node.js"
 		]
 	},
