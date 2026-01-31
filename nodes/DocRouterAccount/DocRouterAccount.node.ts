@@ -9,7 +9,7 @@ import { NodeConnectionTypes, NodeOperationError } from 'n8n-workflow';
 
 export class DocRouterAccount implements INodeType {
 	description: INodeTypeDescription = {
-		displayName: 'DocRouter Account',
+		displayName: 'DocRouter',
 		name: 'docRouterAccount',
 		icon: { light: 'file:../../icons/docrouter.svg', dark: 'file:../../icons/docrouter.dark.svg' },
 		group: ['input'],
@@ -29,18 +29,20 @@ export class DocRouterAccount implements INodeType {
 			},
 		],
 		properties: [
+			// eslint-disable-next-line -- Users and Organizations kept as flat operations (10 ops); resource grouping would split Users vs Orgs
 			{
 				displayName: 'Operation',
 				name: 'operation',
 				type: 'options',
 				noDataExpression: true,
+				/* eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items -- Users first, then Organizations; List/Get before Create/Update/Delete */
 				options: [
-					{ name: 'List Users', value: 'listUsers', description: 'List users', action: 'List users' },
+					{ name: 'List Users', value: 'listUsers', action: 'List users' },
 					{ name: 'Get User', value: 'getUser', description: 'Get a user by ID', action: 'Get user' },
 					{ name: 'Create User', value: 'createUser', description: 'Create a user', action: 'Create user' },
 					{ name: 'Update User', value: 'updateUser', description: 'Update a user', action: 'Update user' },
 					{ name: 'Delete User', value: 'deleteUser', description: 'Delete a user', action: 'Delete user' },
-					{ name: 'List Organizations', value: 'listOrganizations', description: 'List organizations', action: 'List organizations' },
+					{ name: 'List Organizations', value: 'listOrganizations', action: 'List organizations' },
 					{ name: 'Get Organization', value: 'getOrganization', description: 'Get an organization by ID', action: 'Get organization' },
 					{ name: 'Create Organization', value: 'createOrganization', description: 'Create an organization', action: 'Create organization' },
 					{ name: 'Update Organization', value: 'updateOrganization', description: 'Update an organization', action: 'Update organization' },
@@ -54,9 +56,9 @@ export class DocRouterAccount implements INodeType {
 				name: 'limit',
 				type: 'number',
 				typeOptions: { min: 1, max: 100 },
-				default: 10,
+				default: 50,
 				displayOptions: { show: { operation: ['listUsers'] } },
-				description: 'Maximum number of users to return',
+				description: 'Max number of results to return',
 			},
 			{
 				displayName: 'Skip',
@@ -91,7 +93,6 @@ export class DocRouterAccount implements INodeType {
 				default: '',
 				required: true,
 				displayOptions: { show: { operation: ['getUser', 'updateUser', 'deleteUser'] } },
-				description: 'The user ID',
 			},
 			// ===== Create User =====
 			{
@@ -102,6 +103,7 @@ export class DocRouterAccount implements INodeType {
 				required: true,
 				displayOptions: { show: { operation: ['createUser'] } },
 				description: 'User email',
+				placeholder: 'name@email.com',
 			},
 			{
 				displayName: 'Name',
@@ -156,7 +158,7 @@ export class DocRouterAccount implements INodeType {
 				displayName: 'Email Verified',
 				name: 'emailVerified',
 				type: 'boolean',
-				default: undefined,
+				default: false,
 				displayOptions: { show: { operation: ['updateUser'] } },
 				description: 'Whether the user email is verified',
 			},
@@ -164,7 +166,7 @@ export class DocRouterAccount implements INodeType {
 				displayName: 'Has Seen Tour',
 				name: 'hasSeenTour',
 				type: 'boolean',
-				default: undefined,
+				default: false,
 				displayOptions: { show: { operation: ['updateUser'] } },
 				description: 'Whether the user has seen the tour',
 			},
@@ -219,7 +221,6 @@ export class DocRouterAccount implements INodeType {
 				default: '',
 				required: true,
 				displayOptions: { show: { operation: ['getOrganization', 'updateOrganization', 'deleteOrganization'] } },
-				description: 'The organization ID',
 			},
 			// ===== Create Organization =====
 			{
