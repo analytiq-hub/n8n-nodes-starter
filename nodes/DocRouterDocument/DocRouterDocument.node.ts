@@ -80,7 +80,7 @@ export class DocRouterDocument implements INodeType {
 					show: { operation: ['upload'] },
 				},
 				description:
-					'Name of the binary property containing the file data (e.g. "data" from a previous node).',
+					'Name of the binary property containing the file data (e.g. "data" from a previous node)',
 			},
 			{
 				displayName: 'Document Name',
@@ -101,7 +101,7 @@ export class DocRouterDocument implements INodeType {
 				displayOptions: {
 					show: { operation: ['upload', 'update'] },
 				},
-				description: 'Comma-separated tag IDs to associate with the document.',
+				description: 'Comma-separated tag IDs to associate with the document',
 			},
 			{
 				displayName: 'Metadata',
@@ -111,14 +111,14 @@ export class DocRouterDocument implements INodeType {
 				displayOptions: {
 					show: { operation: ['upload', 'update'] },
 				},
-				description: 'Optional key-value metadata for the document.',
+				description: 'Optional key-value metadata for the document',
 			},
 			// ===== List parameters =====
 			{
 				displayName: 'Limit',
 				name: 'limit',
 				type: 'number',
-				default: 10,
+				default: 50,
 				typeOptions: {
 					minValue: 1,
 					maxValue: 100,
@@ -126,7 +126,7 @@ export class DocRouterDocument implements INodeType {
 				displayOptions: {
 					show: { operation: ['list'] },
 				},
-				description: 'Maximum number of documents to return (1-100).',
+				description: 'Max number of results to return',
 			},
 			{
 				displayName: 'Skip',
@@ -139,7 +139,7 @@ export class DocRouterDocument implements INodeType {
 				displayOptions: {
 					show: { operation: ['list'] },
 				},
-				description: 'Number of documents to skip (for pagination).',
+				description: 'Number of documents to skip (for pagination)',
 			},
 			{
 				displayName: 'Filter by Tag IDs',
@@ -149,7 +149,7 @@ export class DocRouterDocument implements INodeType {
 				displayOptions: {
 					show: { operation: ['list'] },
 				},
-				description: 'Comma-separated tag IDs to filter documents.',
+				description: 'Comma-separated tag IDs to filter documents',
 			},
 			{
 				displayName: 'Name Search',
@@ -159,7 +159,7 @@ export class DocRouterDocument implements INodeType {
 				displayOptions: {
 					show: { operation: ['list'] },
 				},
-				description: 'Search term for document names.',
+				description: 'Search term for document names',
 			},
 			{
 				displayName: 'Metadata Search',
@@ -170,7 +170,7 @@ export class DocRouterDocument implements INodeType {
 					show: { operation: ['list'] },
 				},
 				description:
-					'Metadata search as key=value pairs, comma-separated (e.g., "author=John,type=invoice").',
+					'Metadata search as key=value pairs, comma-separated (e.g., "author=John,type=invoice")',
 			},
 			// ===== Get/Update/Delete parameters =====
 			{
@@ -182,7 +182,7 @@ export class DocRouterDocument implements INodeType {
 				displayOptions: {
 					show: { operation: ['get', 'update', 'delete'] },
 				},
-				description: 'The ID of the document.',
+				description: 'The ID of the document',
 			},
 			// ===== Get parameters =====
 			{
@@ -197,7 +197,7 @@ export class DocRouterDocument implements INodeType {
 				displayOptions: {
 					show: { operation: ['get'] },
 				},
-				description: 'Which file to retrieve: original or PDF version.',
+				description: 'Which file to retrieve: original or PDF version',
 			},
 			// ===== Update parameters =====
 			{
@@ -208,7 +208,7 @@ export class DocRouterDocument implements INodeType {
 				displayOptions: {
 					show: { operation: ['update'] },
 				},
-				description: 'New name for the document (leave empty to keep current).',
+				description: 'New name for the document (leave empty to keep current)',
 			},
 		],
 	};
