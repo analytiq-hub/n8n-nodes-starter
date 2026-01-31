@@ -3,17 +3,14 @@
 	"version": "0.1.0",
 	"description": "n8n nodes for DocRouter.ai",
 	"license": "MIT",
-	"homepage": "",
+	"homepage": "https://github.com/analytiqhub/n8n-nodes-docrouter#readme",
 	"keywords": [
 		"n8n-community-node-package"
 	],
-	"author": {
-		"name": "Andrei Radulescu-Banu",
-		"email": "andrei@analytiqhub.com"
-	},
+	"author": "Andrei Radulescu-Banu <andrei@analytiqhub.com>",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/analytiqhub/n8n-nodes-docrouter.git"
+		"url": "git+https://github.com/analytiqhub/n8n-nodes-docrouter.git"
 	},
 	"scripts": {
 		"build": "n8n-node build",
@@ -51,5 +48,9 @@
 	},
 	"peerDependencies": {
 		"n8n-workflow": "*"
+	},
+	"main": ".prettierrc.js",
+	"bugs": {
+		"url": "https://github.com/analytiqhub/n8n-nodes-docrouter/issues"
 	}
 }

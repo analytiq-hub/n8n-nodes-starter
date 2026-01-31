@@ -366,7 +366,7 @@ export class DocRouterDocument implements INodeType {
 						const documentId = this.getNodeParameter('documentId', itemIndex) as string;
 						const fileType = this.getNodeParameter('fileType', itemIndex, 'original') as string;
 
-						response = (await this.helpers.httpRequestWithAuthentication.call(
+						const getResponse = (await this.helpers.httpRequestWithAuthentication.call(
 							this,
 							'docRouterOrgApi',
 							{
@@ -377,6 +377,29 @@ export class DocRouterDocument implements INodeType {
 								json: true,
 							},
 						)) as IDataObject;
+
+						if (getResponse?.content != null) {
+							const content = getResponse.content as string;
+							const documentName = (getResponse.document_name as string) || 'document';
+							const mimeType =
+								(getResponse.type as string) || 'application/octet-stream';
+							const metadata = { ...getResponse };
+							delete metadata.content;
+							returnData.push({
+								json: metadata as IDataObject,
+								binary: {
+									data: {
+										data: content,
+										mimeType,
+										fileName: documentName,
+									},
+								},
+								pairedItem: { item: itemIndex },
+							});
+							continue;
+						}
+
+						response = getResponse;
 						break;
 					}
 
