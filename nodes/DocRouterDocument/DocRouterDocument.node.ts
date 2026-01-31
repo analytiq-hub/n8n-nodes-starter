@@ -34,6 +34,7 @@ export class DocRouterDocument implements INodeType {
 				name: 'operation',
 				type: 'options',
 				noDataExpression: true,
+				/* eslint-disable-next-line n8n-nodes-base/node-param-options-type-unsorted-items -- Operation order: Upload first (primary), then List/Get, then Update/Delete */
 				options: [
 					{
 						name: 'Upload',
