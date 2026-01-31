@@ -37,6 +37,7 @@
 			"dist/nodes/GithubIssues/GithubIssues.node.js",
 			"dist/nodes/Example/Example.node.js",
 			"dist/nodes/DocRouterDocument/DocRouterDocument.node.js",
+			"dist/nodes/DocRouterTag/DocRouterTag.node.js",
 			"dist/nodes/DocRouterWebhook/DocRouterWebhook.node.js"
 		]
 	},
