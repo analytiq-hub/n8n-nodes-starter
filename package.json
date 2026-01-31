@@ -5,7 +5,10 @@
 	"license": "MIT",
 	"homepage": "https://github.com/analytiqhub/n8n-nodes-docrouter#readme",
 	"keywords": [
-		"n8n-community-node-package"
+		"n8n-community-node-package",
+		"n8n",
+		"docrouter",
+		"docrouter.ai"
 	],
 	"author": "Andrei Radulescu-Banu <andrei@analytiqhub.com>",
 	"repository": {
@@ -54,7 +57,6 @@
 	"peerDependencies": {
 		"n8n-workflow": "*"
 	},
-	"main": ".prettierrc.js",
 	"bugs": {
 		"url": "https://github.com/analytiqhub/n8n-nodes-docrouter/issues"
 	}
