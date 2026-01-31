@@ -39,7 +39,7 @@
 		"nodes": [
 			"dist/nodes/GithubIssues/GithubIssues.node.js",
 			"dist/nodes/Example/Example.node.js",
-			"dist/nodes/DocRouter/DocRouter.node.js"
+			"dist/nodes/DocRouterDocument/DocRouterDocument.node.js"
 		]
 	},
 	"devDependencies": {
