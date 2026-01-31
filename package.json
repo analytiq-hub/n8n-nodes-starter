@@ -36,6 +36,7 @@
 			"dist/nodes/DocRouterDocument/DocRouterDocument.node.js",
 			"dist/nodes/DocRouterTag/DocRouterTag.node.js",
 			"dist/nodes/DocRouterLLM/DocRouterLLM.node.js",
+			"dist/nodes/DocRouterPrompt/DocRouterPrompt.node.js",
 			"dist/nodes/DocRouterWebhook/DocRouterWebhook.node.js"
 		]
 	},
